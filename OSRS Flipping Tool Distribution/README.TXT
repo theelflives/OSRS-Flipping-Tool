@@ -1,4 +1,4 @@
--this folder is required for the program to run properly leave as is
+-to download the OSRS Flipping Tool you will need to download this folder 
 
 -double click the RUN file in this folder to run the program (it will open in the command line)
 
