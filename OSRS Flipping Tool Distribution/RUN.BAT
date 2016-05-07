@@ -1,1 +1,0 @@
-java -jar "OSRS_Flipping_Tool.jar" 
