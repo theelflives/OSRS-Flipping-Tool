@@ -65,9 +65,9 @@ public class FlipTool {
     }
     
     //this is where we go through the list and compare prices and stuff
-    public List<String> generateFlipList(int maxItemPrice, int minPercentMargin) throws Exception{
+    public List<GEItem> generateFlipList(int maxItemPrice, int minPercentMargin) throws Exception{
         //declare result variable to be returned
-        List<String> result = new ArrayList<>();
+        List<GEItem> result = new ArrayList<>();
         JSONObject itemSummary;
         
         //get OSBuddy summary.json(list of all ge items) list as JSONObject
@@ -96,8 +96,15 @@ public class FlipTool {
                 profitPercent = (buy > 0 && diff > 0) ? (diff/buy)*100 : -1;
                 
                 //if the percentage margin per item is more than or equal too the minimum set in param minPercentMargin
-                if(profitPercent >= minPercentMargin)
-                    result.add("Item : " + item.getString("name") + " |Buy : " + (int)buy + "gp |Sell : " + (int)sell + "gp |Margin(gp) : " + (int)diff + "gp |Margin(%) : " + (int)profitPercent + "%");               
+                if(profitPercent >= minPercentMargin){
+                    
+                    //create new GEItem
+                    GEItem geitem = new GEItem(item.getString("name"),item.getInt("id"),(int)buy,(int)sell,item.getInt("sp"),item.getBoolean("members"));
+                    
+                    //add to result
+                    result.add(geitem);
+                
+                }
             }
         }
         

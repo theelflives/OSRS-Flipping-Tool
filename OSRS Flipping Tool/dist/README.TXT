@@ -1,0 +1,3 @@
+-double click OSRS_Flipping_Tool.jar to run
+-leave this folder as it is or the flipping tool may not work
+-any questions or suggestions feel free to contact theelflives@gmail.com
